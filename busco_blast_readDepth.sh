@@ -1,5 +1,5 @@
 #######################################################
-########### V1.2 duplicate regions confirmation #######
+########## Busco duplicate regions confirmation #######
 #######################################################
 
 # Names and locations of four bamfiles of interest to me
