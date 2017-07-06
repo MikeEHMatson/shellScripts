@@ -60,7 +60,7 @@ regionPrime=1540-23486
 chrPrime=chr000032F
 
 ## Parese out blast hit region
-samtools faidx $REF_1_2 $contig:$region > $contig.$region.fa
+samtools faidx $REF $contig:$region > $contig.$region.fa
 blastn -query $contig.$region.fa -out blastOut.$contig.$region.txt -db $dbDir/pacbio1.2_blastdb -evalue 9e-150 -outfmt 7 -num_threads 8;
 
 ## Calculate depth in regions for all four parents or sample bamfiles of interest.
