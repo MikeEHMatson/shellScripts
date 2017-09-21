@@ -26,8 +26,8 @@ module load samtools
 makeblastdb -in $REF -out $dbDir/reference_v1 -dbtype nucl -parse_seqids
 
 #### Output all contigs/chromosomes of reference genome as individual fasta files
-# This file was generated from the program ALLMAPS and contains each contig in the reference in column 1 ($0) and its size in column 2 ($1)
-awk '{print $1}' reverence_vsersion1.sizes > allChrList.txt
+# The "reference_version1.sizes" file was generated from the program ALLMAPS and contains each contig in the reference in column 1 ($0) and its size in column 2 ($1)
+awk '{print $1}' reference_version1.sizes > allChrList.txt
 list='allChrList.txt'
 allCtg=`cat $list`
 
@@ -71,6 +71,7 @@ $contig:$region for parent $parent
 From a total contig length of:
 $(wc -c < $chrDir/$contig.fa)" > $contig:$region.depth.txt
 samtools depth $p618 -r $chr:$region |  awk '{sum+=$3} END { print "Average = ",sum/NR}' >> $contig:$region.depth.txt
+
 echo "
 
 Depth of region: 
